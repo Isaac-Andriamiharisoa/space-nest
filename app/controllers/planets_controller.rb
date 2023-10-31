@@ -40,10 +40,7 @@ class PlanetsController < ApplicationController
   end
 
   def create_booking
-    # planet_id = 1
-    # # user_id = 1
-    # start_date = 'a'
-    # end_date = 'e'
+
   end
 
   private
