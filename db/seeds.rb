@@ -7,3 +7,31 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+Planet.destroy_all
+
+Planet.create(name: 'Earth',
+              details: 'Wonder Woman comes into conflict with the Soviet Union during the Cold War in the 1980s',
+              price: 20_000,
+              distance: 0)
+
+Planet.create(
+  name: 'Mercury',
+  details: 'The closest planet to the Sun, Mercury has extreme temperature variations and a very thin atmosphere.',
+  price: 10_000,
+  distance: 77_000_000
+)
+
+Planet.create(
+  name: 'Venus',
+  details: 'Venus is known for its thick, toxic atmosphere and extreme surface temperatures, making it the hottest planet in our solar system.',
+  price: 15_000,
+  distance: 261_000_000
+)
+
+Planet.create(
+  name: 'Mars',
+  details: 'Often called the "Red Planet," Mars is known for its iron-rich soil and potential for supporting future human exploration.',
+  price: 20_000,
+  distance: 225_000_000
+)

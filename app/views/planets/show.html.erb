@@ -1,0 +1,8 @@
+<h1>Planets#show</h1>
+<p>Find me in app/views/planets/show.html.erb</p>
+
+<%= @planet.name %>
+<%= @planet.price %>
+<%= @planet.distance %>
+
+<%= button_to 'Delete', planet_path(@planet), method: :delete %>

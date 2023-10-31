@@ -1,0 +1,10 @@
+<h1>Planets#edit</h1>
+<p>Find me in app/views/planets/edit.html.erb</p>
+
+<%= simple_form_for @planet do |f| %>
+  <%= f.input :name %>
+  <%= f.input :details %>
+  <%= f.input :price %>
+  <%= f.input :distance %>
+  <%= f.submit %>
+<% end %>
