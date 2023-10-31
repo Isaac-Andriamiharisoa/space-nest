@@ -11,8 +11,16 @@
 @import "components/index";
 @import "pages/index";
 
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;700&family=Playpen+Sans:wght@300&display=swap');
+
 * {
+  margin: 0;
+  padding: 0;
   color: #fff;
+}
+
+html {
+  box-sizing: border-box;
 }
 
 body {
