@@ -1,3 +1,17 @@
-.navbar {
+.navbar-lewagon {
+  justify-content: space-between;
   height: 100px;
+  box-shadow: 0px 2px 15px 5px rgb(9, 5, 17);
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
+}
+
+.nav-link {
+  color: #fff;
 }
