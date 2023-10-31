@@ -1,0 +1,11 @@
+<div class="container">
+  <% @bookings.each do |booking| %>
+    <%= link_to planet_path(booking.planet) do %>
+      <div class="card">
+        <h3><%= booking.planet.name %></h3>
+        <p><%= booking.planet.details %></p>
+        <p><%= booking.planet.price %>$ per night</p>
+      </div>
+    <% end %>
+  <% end %>
+</div>
