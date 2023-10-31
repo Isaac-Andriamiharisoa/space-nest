@@ -11,20 +11,12 @@
   </head>
 
   <body>
-    <div class="navbar">
-      <div class="navbar-item">
-      </div>
 
-      <div class="navbar-item">
-      <%= link_to "Home", root_path %>
-      <%= link_to "Gallery", planets_path %>
-      <a href="#">Why us?</a>
-      </div>
-      
-      <div class="navbar-item">
+    <%= render "shared/navbar" %>
+    <%= render "shared/flashes" %>
 
-      </div>
-    </div>
     <%= yield %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
   </body>
 </html>
