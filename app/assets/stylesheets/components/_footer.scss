@@ -1,0 +1,25 @@
+.footer {
+  margin-top: auto;
+  height: 350px;
+  background-color: #0F0920;
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 150px;
+    margin: 75px 125px;
+  }
+
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 75%;
+    padding: 50px 75px;
+    border-left: 2px solid black;
+  }
+
+  .text-container-item {
+    line-height: 10px;
+  }
+}

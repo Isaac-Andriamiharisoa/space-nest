@@ -14,9 +14,24 @@
 
     <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
+    <div class="main">
+      <%= yield %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </div>
 
-    <%= yield %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <div class="footer">
+      <%= image_tag "logo.png", alt: "text" %>
+      <div class="text-container">
+        <div class="text-container-item">
+          <p>help us Lorem ipsum dolor sit amet. help us Lorem ipsum dolor sit amet.</p>
+          <p>Help us support Lorem, ipsum.</p>
+        </div>
+        <div class="text-container-item">
+          <p>help us Lorem ipsum dolor sit amet. help us Lorem ipsum dolor sit amet.</p>
+          <p>Help us support Lorem, ipsum.</p>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
