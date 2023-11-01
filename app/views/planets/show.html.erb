@@ -1,8 +1,15 @@
-<h1>Planets#show</h1>
-<p>Find me in app/views/planets/show.html.erb</p>
+<body style="background-color: #221C3E;">
+  <div class="container_banner">
+    <div class="text">
+      <h1>Planets Nyisodasijen</h1>
+    </div>
+  </div>
+</body>
 
+<p>Find me in app/views/planets/show.html.erb</p>
 <%= @planet.name %>
 <%= @planet.price %>
 <%= @planet.distance %>
+
 
 <%= button_to 'Delete', planet_path(@planet), method: :delete %>
