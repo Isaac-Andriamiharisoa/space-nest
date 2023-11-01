@@ -24,5 +24,13 @@ html {
 }
 
 body {
-  background-color: #0F0920;
+  background-color: #221C3E;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 100vw;
+}
+
+.main {
+  flex-grow: 1;
 }
