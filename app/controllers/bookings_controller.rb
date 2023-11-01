@@ -1,7 +1,10 @@
-+-class BookingsController < ApplicationController
+class BookingsController < ApplicationController
+  def index
+    @bookings = Booking.where(user_id: current_user.id)
+  end
+
   def new
     @booking = Booking.new
-    # @user = current_user
     @planet = Planet.find(params[:planet_id])
   end
 
@@ -15,6 +18,10 @@
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @booking = Booking.find[params[:id]]
   end
 
   private

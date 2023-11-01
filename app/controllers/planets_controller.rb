@@ -1,8 +1,8 @@
 class PlanetsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
   def index
-    if params[:search]
-      @planets = Planet.where(name: params[:search])
+    if params[:search] && params[:search] != ""
+      @planets = Planet.where('lower(name) = ?', params[:search].downcase)
     else
       @planets = Planet.all
     end

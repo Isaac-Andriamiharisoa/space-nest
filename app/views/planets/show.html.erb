@@ -11,5 +11,5 @@
 <%= @planet.price %>
 <%= @planet.distance %>
 
-
+<%= link_to "Book", new_planet_booking_path(@planet[:id]) %>
 <%= button_to 'Delete', planet_path(@planet), method: :delete %>

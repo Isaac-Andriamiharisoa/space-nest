@@ -1,0 +1,22 @@
+.button-blue {
+  // background-color: #0368FF;
+  background-image: linear-gradient(#0368FF, rgb(18, 113, 255));
+  color: white;
+  padding: 15px 100px;
+  border-radius: 50px;
+  box-shadow: 0 0 0 #0368FF;
+  transition: 150ms all ease;
+}
+
+.button-blue:hover {
+  box-shadow: 0 0 10px #0368FF;
+  background-image: linear-gradient(#0368FF, #4992ff);
+}
+
+.button-search {
+  background-color: #0F0920;
+  border: none;
+  padding: 12px 15px;
+  border-radius: 50px 0 0 50px;
+}
+
