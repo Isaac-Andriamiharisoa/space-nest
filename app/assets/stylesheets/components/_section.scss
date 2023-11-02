@@ -1,0 +1,49 @@
+.info-container {
+  background-color: #221c3e;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-item-container {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  h3,
+  h2,
+  p,
+  i {
+    color: white;
+  }
+
+  .icon-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 40px;
+    padding: 25px 0;
+  }
+}
+
+.caroussel {
+  height: 350px;
+  width: 100%;
+  padding: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0F0920;
+
+  .section-img {
+    width: 300px;
+  }
+
+  i {
+    font-size: 30px;
+  }
+}

@@ -34,3 +34,39 @@ border-radius: 30px;
   color: #F2F0FF;
   padding-right: 25px;
 }
+
+.banner{
+  width: 100%;
+  height: 100vh;
+  padding-top: 100px;
+  background-position: right;
+  background-size: cover;
+  background-image: url('bg-home.png');
+  color: #DADADA;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  .fa-angle-down {
+    position: absolute;
+    font-size: 60px;
+    bottom: 0;
+    left: 50%;
+  }
+
+  .text-item-container {
+    margin-left: auto;
+    width: 40vw;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+      font-size: 60px;
+    }
+
+    p{
+      font-size: 20px;
+    }
+  }
+}

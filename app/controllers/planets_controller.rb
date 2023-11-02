@@ -1,6 +1,11 @@
 class PlanetsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
   def index
-    @planets = Planet.all
+    if params[:search] && params[:search] != ""
+      @planets = Planet.where('name ILIKE ? OR details ILIKE ?', "%#{params[:search]}%", "%#{params[:search]}%")
+    else
+      @planets = Planet.all
+    end
   end
 
   def show
@@ -13,6 +18,7 @@ class PlanetsController < ApplicationController
 
   def create
     @planet = Planet.new(planet_params)
+    @planet.name = @planet.name.lowercase
     if @planet.save
       redirect_to planet_path(@planet)
     else
@@ -40,10 +46,6 @@ class PlanetsController < ApplicationController
   end
 
   def create_booking
-    # planet_id = 1
-    # # user_id = 1
-    # start_date = 'a'
-    # end_date = 'e'
   end
 
   private

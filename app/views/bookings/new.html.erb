@@ -1,10 +1,7 @@
-<h1>Bookings#new</h1>
-<p>Find me in app/views/bookings/new.html.erb</p>
-
+<h2>Book Planets</h2>
 <%= simple_form_for [@planet, @booking] do |f| %>
   <%= f.association :planet %>
   <%= f.input :start_date %>
   <%= f.input :end_date %>
   <%= f.submit %>
 <% end %>
-

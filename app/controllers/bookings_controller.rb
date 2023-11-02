@@ -1,4 +1,8 @@
 class BookingsController < ApplicationController
+  def index
+    @bookings = Booking.where(user_id: current_user.id)
+  end
+
   def new
     @booking = Booking.new
     @planet = Planet.find(params[:planet_id])
@@ -6,7 +10,9 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.create(booking_params)
-    @planet = Planet.find(@booking[:planet_id])
+    @booking.user = current_user
+    @planet = Planet.find(params[:planet_id])
+    @booking.planet = @planet
     if @booking.save
       redirect_to planet_path(@planet)
     else
@@ -14,14 +20,13 @@ class BookingsController < ApplicationController
     end
   end
 
-  def index
-    @bookings = Booking.all
+  def destroy
+    @booking = Booking.find[params[:id]]
   end
-
 
   private
 
   def booking_params
-    params.require(:booking).permit(:planet_id, :start_date, :end_date)
+    params.require(:booking).permit(:planet_id, :user_id, :start_date, :end_date)
   end
 end
