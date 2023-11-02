@@ -20,8 +20,9 @@ class PlanetsController < ApplicationController
 
   def create
     @planet = Planet.new(planet_params)
+    @planet.user_id = current_user.id
     if @planet.save
-      redirect_to planet_path(@planet)
+      redirect_to created_path, notice: "A new planet is ready to be rented"
     else
       render :new, status: :unprocessable_entity
     end
@@ -44,9 +45,6 @@ class PlanetsController < ApplicationController
     @planet = Planet.find(params[:id])
     @planet.destroy
     redirect_to planets_path, status: :see_other
-  end
-
-  def create_booking
   end
 
   private

@@ -1,9 +1,11 @@
 .card-container {
   margin: auto;
   width: 70vw;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 25px;
   justify-content: center;
+  align-items: center;
 }
 
 .card {

@@ -95,19 +95,11 @@
             <input type="hidden" name="planets" class="end" value="<%= booking[:end_date] %>">
           <% end %>
 
-
-          <form action="<%= bookings_path %>", method="POST">
-
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Start date</label>
-              <input class="form-control" name="fromDateold" id="fromDate" style="width: 200px" disabled>
-              <label for="exampleFormControlInput1" class="form-label" style="width: 200px; font-size: 12px;">End date</label>
-              <input class="form-control" name="toDate" id="toDate" style="width: 200px" disabled>
-
-              <button type="submit" class="btn btn-primary" style="width: 200px; height: 45px; border-radius: 32px;">Checkout</button>
-            </div>
-
-          </form>
+          <%= simple_form_for [@planet, @booking] do |f| %>
+            <%= f.input :start_date, as: :string %>
+            <%= f.input :end_date, as: :string %>
+            <%= f.submit %>
+          <% end %>
 
         </div>
       </div>
@@ -116,26 +108,37 @@
 </div>
 
 <script>
-flatpickr("#fromdate", {
+
+let disableRanges = [];
+const startDate = document.querySelectorAll('.start');
+const endDate = document.querySelectorAll('.end');
+
+for (let i = 0; i < startDate.length; i++) {
+  disableRanges.push({ from: startDate[i].value, to:endDate[i].value})
+}
+
+const fs = flatpickr("#fromdate", {
   inline: true,
+  minDate: "today",
   dateFormat: "Y-m-d",
-  disable: [{
-    from: "2023-11-02",
-    to: "2023-11-5"
-  }],
+  disable: disableRanges,
   onChange: value => {
     const selectedDate = value[0];
     const dateStr = selectedDate.getDate() + '/' + (selectedDate.getMonth() + 1) + '/' + selectedDate.getFullYear();
-    document.getElementById('fromDate').value = dateStr;
-  }
+    document.getElementById('booking_start_date').value = dateStr;
+    td.set('minDate', selectedDate)
+  },
 });
 
-flatpickr("#todate", {
+const td = flatpickr("#todate", {
   inline: true,
+  minDate: "today",
+  dateFormat: "Y-m-d",
+  disable: disableRanges,
   onChange: value => {
     const selectedDate = value[0];
     const dateEnd = selectedDate.getDate() + '/' + (selectedDate.getMonth() + 1) + '/' + selectedDate.getFullYear();
-    document.getElementById('toDate').value = dateEnd;
+    document.getElementById('booking_end_date').value = dateEnd;
   }
 });
 </script>
