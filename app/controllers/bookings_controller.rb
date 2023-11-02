@@ -14,7 +14,7 @@ class BookingsController < ApplicationController
     @planet = Planet.find(params[:planet_id])
     @booking.planet = @planet
     if @booking.save
-      redirect_to planet_path(@planet)
+      redirect_to bookings_path, notice: "The planet has been booked"
     else
       render :new, status: :unprocessable_entity
     end

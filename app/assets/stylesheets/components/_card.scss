@@ -40,10 +40,61 @@
     overflow: hidden;
     text-overflow: ellipsis;
     padding: 0 25px;
-    color: #9795B5;
+    color: #9795b5;
   }
 }
 
 .card-long {
+  margin: auto;
+  width: 100%;
+  height: 60vh;
+  padding: 150px 0px 50px 0;
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-long-img-container {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .card-long-img {
+    height: 100%;
+    border-radius: 20px;
+  }
+}
+
+.card-long-text-container {
+  width: 45%;
+  height: 100%;
+  padding-left: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .icon-container {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+  }
+
+  .icon-items{
+    color: white;
+    font-size: 30px;
+  }
+}
+
+.card-long-button-container{
+  display: flex;
+  align-items: center;
+
+  .button {
+    width: 35%;
+    margin-right: 50px;
+    text-align: center;
+  }
 }
