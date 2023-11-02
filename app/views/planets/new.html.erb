@@ -1,13 +1,36 @@
-<h1>Planets#new</h1>
-<p>Find me in app/views/planets/new.html.erb</p>
+<div class="planetmotadd">
+  <h1>Add a Planet</h1>
+  <%# <p>Find me in app/views/planets/new.html.erb</p> %>
+</div>
 
-<%= simple_form_for @planet do |f| %>
-  <%= f.input :name %>
-  <%= f.input :details %>
-  <%= f.input :price %>
-  <%= f.input :distance %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit %>
-<% end %>
+<div class="azoutplanet">
 
-<%= link_to "back", planets_path %>
+  <div class="uploadpic">
+    <img src="https://images.pexels.com/photos/6705878/pexels-photo-6705878.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="profile-picture" height="200" width="200" class="profimg">
+    <%= button_to "Upload a picture" %>
+  </div>
+
+  <div class="addnewplanet">
+
+    <div class="form-inputs">
+      <%= simple_form_for @planet do |f| %>
+      <%= f.input :name %>
+      <%= f.input :details %>
+      <%= f.input :price %>
+      <%= f.input :distance %>
+      <%= f.input :temperature %>
+    </div>
+
+    <div class="form-action">
+      <%= f.submit %>
+    </div>
+
+    <% end %>
+
+    <div class="backbutton">
+    <%= link_to "back", planets_path %>
+    </div>
+
+  </div>
+
+</div>

@@ -20,7 +20,6 @@ class PlanetsController < ApplicationController
 
   def create
     @planet = Planet.new(planet_params)
-    @planet.name = @planet.name.lowercase
     if @planet.save
       redirect_to planet_path(@planet)
     else
