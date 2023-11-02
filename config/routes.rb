@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resources :planets do
+    get "/bookings", to: "bookings#index", on: :collection
     resources :bookings, only: %w[new create]
   end
 end

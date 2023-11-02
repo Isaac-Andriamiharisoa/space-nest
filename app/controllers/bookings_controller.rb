@@ -1,4 +1,4 @@
-+-class BookingsController < ApplicationController
+class BookingsController < ApplicationController
   def new
     @booking = Booking.new
     @planet = Planet.find(params[:planet_id])
@@ -13,6 +13,11 @@
       render :new, status: :unprocessable_entity
     end
   end
+
+  def index
+    @bookings = Booking.all
+  end
+
 
   private
 
