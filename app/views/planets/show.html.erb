@@ -1,39 +1,46 @@
 <div data-controller="show-planet">
-  <div class="container-fluid">
-    <div class="row" style="background-color: #0F0920">
-      <div class="col-5">
-        <div style="margin: 100px; border-radius: 32px; overflow: hidden; height: 400px; width: 400px">
-          <img src="https://cdn.pixabay.com/photo/2023/09/30/09/12/dachshund-8285220_1280.jpg" style="width: 100%">
-        </div>
+
+    <div class="card-long" style="background-color: #0F0920">
+
+      <div class="card-long-img-container">
+        <img src="https://cdn.pixabay.com/photo/2023/09/30/09/12/dachshund-8285220_1280.jpg" class="card-long-img">
       </div>
-      <div class="col-7">
-        <div style="margin: 150px 100px 0 0">
-          <h1 style="color: white; font-size: 60px">Planet Name</h1>
-          <div class="row" style="margin-top: 40px">
-            <div class="col-4 text-center">
-              <div style="font-size: 40px"><i class="bi bi-thermometer-half"></i></div>
-              <div style="margin-top: 10px">Temperature</div>
-              <div style= "font-size: 10px; margin-top: 3px">-63°F - 81°F</div>
+
+      <div class="card-long-text-container">
+
+          <h1 style="color: white; font-size: 60px"><%= @planet.name %></h1>
+          <div class="icon-container">
+
+            <div class="icon-items">
+              <i class="bi bi-thermometer-half"></i>
+              <h6>Temperature</h6>
+              <p><%= @planet.temperature %>°F</p>
             </div>
-            <div class="col-4" style="text-align: center">
-              <div style="font-size: 40px"><i class="bi bi-geo-alt-fill"></i></div>
-              <div style="margin-top: 10px">Distance</div>
-              <div style= "font-size: 10px; margin-top: 3px"> 4.52 AU</div>
+
+            <div class="icon-items">
+              <i class="bi bi-geo-alt-fill"></i>
+              <h6>Distance</h6>
+              <p><%= @planet.distance %> AU</p>
             </div>
-            <div class="col-4" style="text-align: center">
-              <div style="font-size: 40px"><i class="bi bi-tag"></i></div>
-              <div style="margin-top: 10px">Price</div>
-              <div style= "font-size: 10px; margin-top: 3px"><i class="bi bi-currency-bitcoin"></i>13 Bitcoin</div>
+
+            <div class="icon-items">
+              <i class="bi bi-tag"></i>
+              <h6>Price</h6>
+              <p><i class="bi bi-currency-bitcoin"></i><%= @planet.price %> / night</p>
             </div>
+
           </div>
-          <div style="margin: 60px 0 0 15px">
-            <button data-action="click->show-planet#bookNow" type="button" class="btn btn-outline-success" style="width: 200px; height: 50px; border-radius: 15px;">Buy</button>
+          <div class="card-long-button-container">
+            <%= link_to "Rent", "#footer", class: "button button-blue" %>
+            <%= link_to "Back", planets_path, class: "button button-revert-blue" %>
           </div>
-        </div>
+
       </div>
+
     </div>
-  </div>
-  <div class="container-fluid">
+
+
+    <div class="container-fluid">
     <div class="row">
       <div class="col-9" style="box-shadow: 1px 0px 0px #0F0920;">
         <div style="margin: 50px 0 50px 100px">
@@ -55,10 +62,13 @@
       </div>
     </div>
   </div>
+
   <div class="container-fluid">
+
     <div style="margin: 50px 0 50px 100px">
       <h1 data-show-planet-target="bookingSection">Booking System</h1>
     </div>
+
   <div class="row">
       <div class="col-7">
       <div class="row">
@@ -74,24 +84,37 @@
         </div>
       </div>
       </div>
+
+
         <div class="col-5">
+
           <h5 style="margin-top: 45px">Date Pikr</h5>
-          <div class="row" style="padding-right: 150px">
+
+          <% @bookings.each do |booking| %>
+            <input type="hidden" name="planets" class="start" value="<%= booking[:start_date] %>">
+            <input type="hidden" name="planets" class="end" value="<%= booking[:end_date] %>">
+          <% end %>
+
+
+          <form action="<%= new_planet_booking_path(params[:id]) %>", method="GET">
+
             <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">From Date</label>
-              <input class="form-control" id="fromDate" style="width: 200px">
-            </div>
-          </div>
-          <div class="row" style="padding-right: 150px">
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label" style="width: 200px; font-size: 12px;">To Date</label>
-                <input class="form-control" id="toDate" style="width: 200px">
+              <label for="exampleFormControlInput1" class="form-label">Start date</label>
+              <input class="form-control" name="fromDateold" id="fromDate" style="width: 200px" disabled>
+              <label for="exampleFormControlInput1" class="form-label" style="width: 200px; font-size: 12px;">End date</label>
+              <input class="form-control" name="toDate" id="toDate" style="width: 200px" disabled>
+
+              <div class="popup">
+
               </div>
-          </div>
-          <div style="margin-top: 20px">
-            <button type="button" class="btn btn-primary" style="width: 200px; height: 45px; border-radius: 32px;">Checkout</button>
-          </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 200px; height: 45px; border-radius: 32px;">Checkout</button>
+            </div>
+
+          </form>
+
         </div>
+      </div>
     </div>
   </div>
 </div>
@@ -99,6 +122,11 @@
 <script>
 flatpickr("#fromdate", {
   inline: true,
+  dateFormat: "Y-m-d",
+  disable: [{
+    from: "2023-11-02",
+    to: "2023-11-5"
+  }],
   onChange: value => {
     const selectedDate = value[0];
     const dateStr = selectedDate.getDate() + '/' + (selectedDate.getMonth() + 1) + '/' + selectedDate.getFullYear();
