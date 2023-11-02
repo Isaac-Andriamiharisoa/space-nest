@@ -15,22 +15,17 @@
 
 </div>
 
-
 <div class="card-container">
   <% @planets.each do |planet| %>
-    <%= link_to planet_path(planet) do %>
-      <div class="card">
-        <div class="card-img-container">
-          <%= image_tag "logo.png", alt: "text", class: "card-img" %>
-        </div>
-        <div class="card-text-container">
-          <h3><%= planet.name %></h3>
-          <p><%= planet.details %></p>
-          <p><%= planet.price %>$ per night</p>
-          <%= link_to "Learn more", planet_path(planet), class: "button-blue"  %>
-        </div>
-      </div>
-    <% end %>
+    <div class="card">
+      <%= link_to planet_path(planet), class: "card-link" do %>
+        <%= image_tag "logo.png", alt: "text", class: "card-img" %>
+        <h3><%= planet.name %></h3>
+        <p><%= planet.details %></p>
+        <p><%= planet.price %>$ per night</p>
+        <%= link_to "Learn more", planet_path(planet), class: "button-blue card-button"  %>
+      <% end %>
+    </div>
   <% end %>
 </div>
 

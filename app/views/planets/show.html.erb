@@ -1,15 +1,117 @@
-<body style="background-color: #221C3E;">
-  <div class="container_banner">
-    <div class="text">
-      <h1>Planets Nyisodasijen</h1>
+<div data-controller="show-planet">
+  <div class="container-fluid">
+    <div class="row" style="background-color: #0F0920">
+      <div class="col-5">
+        <div style="margin: 100px; border-radius: 32px; overflow: hidden; height: 400px; width: 400px">
+          <img src="https://cdn.pixabay.com/photo/2023/09/30/09/12/dachshund-8285220_1280.jpg" style="width: 100%">
+        </div>
+      </div>
+      <div class="col-7">
+        <div style="margin: 150px 100px 0 0">
+          <h1 style="color: white; font-size: 60px">Planet Name</h1>
+          <div class="row" style="margin-top: 40px">
+            <div class="col-4 text-center">
+              <div style="font-size: 40px"><i class="bi bi-thermometer-half"></i></div>
+              <div style="margin-top: 10px">Temperature</div>
+              <div style= "font-size: 10px; margin-top: 3px">-63°F - 81°F</div>
+            </div>
+            <div class="col-4" style="text-align: center">
+              <div style="font-size: 40px"><i class="bi bi-geo-alt-fill"></i></div>
+              <div style="margin-top: 10px">Distance</div>
+              <div style= "font-size: 10px; margin-top: 3px"> 4.52 AU</div>
+            </div>
+            <div class="col-4" style="text-align: center">
+              <div style="font-size: 40px"><i class="bi bi-tag"></i></div>
+              <div style="margin-top: 10px">Price</div>
+              <div style= "font-size: 10px; margin-top: 3px"><i class="bi bi-currency-bitcoin"></i>13 Bitcoin</div>
+            </div>
+          </div>
+          <div style="margin: 60px 0 0 15px">
+            <button data-action="click->show-planet#bookNow" type="button" class="btn btn-outline-success" style="width: 200px; height: 50px; border-radius: 15px;">Buy</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-9" style="box-shadow: 1px 0px 0px #0F0920;">
+        <div style="margin: 50px 0 50px 100px">
+          <h1>Description</h1>
+        </div>
+        <div style="margin: 0 150px 0 150px; font-size: 12px">
+          <p class="fw-light">Lorem ipsum dolor Lorem ipsum dolor sit amet consectetur adipiscing eli mattis sit phasellus mollis sit aliquam sit nullam neque ultrices.Lorem ipsum dolor sit amet consectetur adipiscing eli mattis sit phasellus mollis sit aliquam sit nullam neque ultrices.Lorem ipsum dolor sit amet consectetur adipiscing eli mattis sit phasellus mollis sit aliquam sit nullam neque ultrices.Lorem ipsum dolor sit amet consectetur adipiscing eli mattis sit phasellus mollis sit aliquam sit nullam neque ultrices.Lorem ipsum dolor sit amet consectetur adipiscing eli mattis sit phasellus mollis sit aliquam sit nullam neque ultrices.Lorem ipsum dolor sit amet consectetur adipiscing eli mattis sit phasellus mollis sit aliquam sit nullam neque ultrices.Lorem ipsum dolor sit amet consectetur adipiscing eli mattis sit phasellus mollis sit aliquam sit nullam neque ultrices.Lorem ipsum dolor sit amet consectetur adipiscing eli mattis sit phasellus mollis sit aliquam sit nullam neque ultrices.Lorem ipsum dolor sit amet consectetur adipiscing eli mattis sit phasellus mollis sit aliquam sit nullam neque ultrices.Lorem ipsum dolor sit amet consectetur adipiscing eli mattis sit phasellus mollis sit aliquam sit nullam neque ultrices.sit amet consectetur adipisicing elit. Debitis, deserunt sunt eos vitae numquam iure aliquid doloremque laudantium maiores unde tempora est voluptatem dolores aspernatur nesciunt saepe quam, vero sint. Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore tempore exercitationem, atque recusandae, fuga corporis sunt laudantium accusamus a adipisci sapiente, reiciendis impedit placeat? Pariatur aliquid quasi quia labore dolores.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem fugit a in commodi maiores nesciunt, corrupti magni repellendus illum nemo optio alias quisquam tempore dolorem itaque doloribus, mollitia quo voluptatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis earum enim expedita asperiores corrupti maxime, voluptatem corporis voluptatibus obcaecati beatae itaque culpa accusamus a. Culpa mollitia voluptatem eum libero necessitatibus.</p>
+        </div>
+      </div>
+      <div class="col-3" style= "text-align: center">
+        <div style="font-size: 50px; margin-top: 150px"><i class="bi bi-heart"></i></div>
+          <div>
+            <h2 style="font-size: 15px">12.3k Likes</h2>
+          </div>
+        <div style="font-size: 50px; margin-top: 60px"><i class="bi bi-chat-square-dots"></i></div>
+          <div>
+            <h2 style="font-size: 15px">83 Comments</h2>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div style="margin: 50px 0 50px 100px">
+      <h1 data-show-planet-target="bookingSection">Booking System</h1>
+    </div>
+  <div class="row">
+      <div class="col-7">
+      <div class="row">
+        <div class="col" style="padding-left: 150px">
+          <div id="fromdate">
+            <h4>FROM</h4>
+          </div>
+        </div>
+        <div class="col">
+          <div id="todate">
+            <h4>TO</h4>
+          </div>
+        </div>
+      </div>
+      </div>
+        <div class="col-5">
+          <h5 style="margin-top: 45px">Date Pikr</h5>
+          <div class="row" style="padding-right: 150px">
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">From Date</label>
+              <input class="form-control" id="fromDate" style="width: 200px">
+            </div>
+          </div>
+          <div class="row" style="padding-right: 150px">
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label" style="width: 200px; font-size: 12px;">To Date</label>
+                <input class="form-control" id="toDate" style="width: 200px">
+              </div>
+          </div>
+          <div style="margin-top: 20px">
+            <button type="button" class="btn btn-primary" style="width: 200px; height: 45px; border-radius: 32px;">Checkout</button>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
 
-<p>Find me in app/views/planets/show.html.erb</p>
-<%= @planet.name %>
-<%= @planet.price %>
-<%= @planet.distance %>
+<script>
+flatpickr("#fromdate", {
+  inline: true,
+  onChange: value => {
+    const selectedDate = value[0];
+    const dateStr = selectedDate.getDate() + '/' + (selectedDate.getMonth() + 1) + '/' + selectedDate.getFullYear();
+    document.getElementById('fromDate').value = dateStr;
+  }
+});
 
-<%= link_to "Book", new_planet_booking_path(@planet[:id]) %>
-<%= button_to 'Delete', planet_path(@planet), method: :delete %>
+flatpickr("#todate", {
+  inline: true,
+  onChange: value => {
+    const selectedDate = value[0];
+    const dateEnd = selectedDate.getDate() + '/' + (selectedDate.getMonth() + 1) + '/' + selectedDate.getFullYear();
+    document.getElementById('toDate').value = dateEnd;
+  }
+});
+</script>
