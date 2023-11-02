@@ -8,14 +8,28 @@
   color: #DADADA;
   display: flex;
   align-items: center;
+  position: relative;
 
-  .text-container {
-    margin-left: auto;
-    width: 570px;
-    padding: 100px;
+  .fa-angle-down {
+    position: absolute;
+    font-size: 60px;
+    bottom: 0;
+    left: 50%;
   }
 
-  .text-container > h1 {
-    font-size: 40px;
+  .text-item-container {
+    margin-left: auto;
+    width: 40vw;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+      font-size: 60px;
+    }
+
+    p{
+      font-size: 20px;
+    }
   }
 }
