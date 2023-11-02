@@ -13,5 +13,5 @@ Rails.application.routes.draw do
   resources :planets do
     resources :bookings, only: %i[new create]
   end
-  resources :bookings, only: %i[index destroy]
+  resources :bookings, only: %i[index destroy], on: :collection
 end
