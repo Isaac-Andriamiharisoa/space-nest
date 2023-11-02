@@ -1,7 +1,8 @@
+<div class="payment-form">
 <h2>Book Planets</h2>
-<%= simple_form_for [@planet, @booking] do |f| %>
-  <%= f.association :planet %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.submit %>
-<% end %>
+  <%= simple_form_for [@planet, @booking] do |f| %>
+    <%= f.input :start_date, as: :string, value: params[:fromDate] %>
+    <%= f.input :end_date, value: params[:toDate] %>
+    <%= f.submit %>
+  <% end %>
+</div>
