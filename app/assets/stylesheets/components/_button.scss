@@ -1,6 +1,5 @@
-.button-blue {
+.button {
   width: 90%;
-  background-image: linear-gradient(#0368FF, rgb(18, 113, 255));
   color: white;
   padding: 15px 100px;
   border-radius: 50px;
@@ -8,9 +7,22 @@
   transition: 150ms all ease;
 }
 
+.button-blue {
+  background-image: linear-gradient(#0368FF, rgb(18, 113, 255));
+}
+
 .button-blue:hover {
   box-shadow: 0 0 10px 0 #0368FF;
   background-image: linear-gradient(#0368FF, #4992ff);
+}
+
+.button-revert-blue {
+  color: #0368FF;
+  border: 2px solid #0368FF;
+}
+
+.button-revert-blue:hover {
+  box-shadow: 0 0 10px 0 #0368FF;
 }
 
 .button-search {
