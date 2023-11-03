@@ -9,15 +9,19 @@
   <% @planets.each do |planet| %>
     <div class="card">
       <%= link_to planet_path(planet), class: "card-link" do %>
+      <div style="font-size: 25px; margin-left: 80%; margin-top: 5%;">
+        <%= link_to planet_path(planet), data: { turbo_method: :delete } do %>
+          <i class="fa-solid fa-trash"></i>
+        <% end %>
+      </div>
+
       <%= image_tag "logo.png", alt: "text", class: "card-img" %>
       <h3><%= planet.name %></h3>
       <p><%= planet.details %></p>
       <p><%= planet.price %>$ per night</p>
       <%= link_to "Learn more", planet_path(planet), class: "button button-blue card-button"  %>
-      <div class="col-3 text-end">
-        <%= link_to planet_path(planet), data: { turbo_method: :delete } do %>
-          <div style="font-size: 40px; margin: 10px 10px"><i class="fa-solid fa-trash"></i></div>
-        <% end %>
+      <div class="col-3 text-end" style='z-index: 1000;'>
+
       </div>
       <% end %>
     </div>
