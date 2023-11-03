@@ -30,13 +30,14 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    font-size: 40px;
-    padding: 25px 0;
+    font-size: 75px;
+    gap: 100px;
+    margin: 25px 0 35px 0px;
   }
 }
 
 .caroussel {
-  height: 350px;
+  height: 300px;
   width: 100%;
   padding: 25px;
   display: flex;
@@ -45,7 +46,9 @@
   background-color: #0F0920;
 
   .section-img {
-    width: 300px;
+    width: 250px;
+    border-radius: 32px;
+    padding-right: 5px;
   }
 
   i {
