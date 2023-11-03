@@ -10,7 +10,7 @@
         quam impedit in.
       </p>
     </div>
-    <%= link_to "Get a Planet", planets_path, class: "button-blue button-banner", style: "margin: 20px 0 0 40px" %>
+    <%= link_to "Rent a Planet", planets_path, class: "button-blue button-banner", style: "margin: 20px 0 0 40px" %>
   </div>
   <i class="fa-solid fa-angle-down" style="color: #ffffff;"></i>
 </div>
@@ -19,17 +19,17 @@
   <i class="fa-solid fa-angle-left" style="color: #ffffff;"></i>
   <div class="card-long">
 
-    <div class="card-long-text" style="padding-right: 25px">
+    <div class="card-long-text" style="padding-right: 25px; width: 50%;">
       <h1 style="margin-top: 50px"><%= @planets[0].name %></h1>
       <p><%= @planets[0].details %></p>
-      <p>Temperatue: <%= @planets[0].temperature %>℃</p>
+      <p>Temperatue: <%= @planets[0].temperature %>°F</p>
     </div>
     <%= image_tag 'logo.png', alt: "text", class: "section-img" %>
   </div>
   <i class="fa-solid fa-angle-right" style="color: #ffffff;"></i>
 </div>
 
-<div class="info-container">
+<div class="info-container", style="width: 100%;">
   <div class="info-item-container">
     <h6 style="padding-top: 35px">FOR A BETTER FUTURE</h6>
     <h2 style="font-weight: bold;">OUR MISSION</h2>

@@ -1,22 +1,13 @@
-<div class="planetmotadd">
-  <h1>Add a Planet</h1>
-  <%# <p>Find me in app/views/planets/new.html.erb</p> %>
-</div>
-
 <div class="azoutplanet">
-
-  <div class="uploadpic">
-    <%= image_tag "logo.png", alt: "text", width: "200", height: "200" %>
-
   <div class="addnewplanet">
-
+    <h1>Add a Planet</h1>
     <div class="form-inputs">
       <%= simple_form_for @planet do |f| %>
       <%= f.input :name %>
       <%= f.input :details %>
-      <%= f.input :price %>
-      <%= f.input :distance %>
-      <%= f.input :temperature %>
+      <%= f.input :price, placeholder: "BitCoin" %>
+      <%= f.input :distance, placeholder: "AU" %>
+      <%= f.input :temperature, placeholder: "°F" %>
       <%= f.input :photo, as: :file %>
     </div>
 
