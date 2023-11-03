@@ -91,7 +91,7 @@
           <h5 style="margin-top: 45px">Date Pikr</h5>
 
           <% @bookings.each do |booking| %>
-            <input type="hidden" name="planets" class="start" value="<%= booking[:start_date] %>">
+            <input type="hidden" name="planets" class="start" style="color: white" value="<%= booking[:start_date] %>">
             <input type="hidden" name="planets" class="end" value="<%= booking[:end_date] %>">
           <% end %>
 

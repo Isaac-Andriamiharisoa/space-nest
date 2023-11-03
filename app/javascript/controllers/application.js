@@ -8,5 +8,4 @@ application.debug = false
 window.Stimulus   = application
 window.Stimulus.register('show-planet', ShowPlanetController)
 
-
 export { application }
