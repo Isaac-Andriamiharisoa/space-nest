@@ -4,7 +4,12 @@
     <div class="row" style="background-color: #0F0920; border-radius: 32px; overflow: hidden; margin: 50px">
       <div class="col-3">
         <div style="margin: 50px; border-radius: 32px; overflow: hidden; height: 200px; width: 200px">
-          <img src="https://cdn.pixabay.com/photo/2023/09/30/09/12/dachshund-8285220_1280.jpg" style="width: 100%">
+
+          <% if booking.planet.photo.attached? %>
+            <%= cl_image_tag booking.planet.photo.key, alt: "An avatar", class: "card-img"%>
+          <% else %>
+            <%= image_tag "logo.png", alt: "A current_user", class: "card-img" %>
+          <% end %>
         </div>
       </div>
 
