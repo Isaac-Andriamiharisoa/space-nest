@@ -52,6 +52,6 @@ class PlanetsController < ApplicationController
   private
 
   def planet_params
-    params.require(:planet).permit(%i[name details price distance])
+    params.require(:planet).permit(%i[name details price distance photo])
   end
 end
