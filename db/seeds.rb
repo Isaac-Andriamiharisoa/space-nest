@@ -16,7 +16,7 @@ Planet.create(
   price: 20_000,
   distance: 0,
   temperature: 23,
-  user_id: 1
+  user_id: 2
 )
 
 Planet.create(
@@ -25,7 +25,7 @@ Planet.create(
   price: 10_000,
   distance: 77_000_000,
   temperature: 100,
-  user_id: 1
+  user_id: 2
 )
 
 Planet.create(
@@ -34,7 +34,7 @@ Planet.create(
   price: 15_000,
   distance: 261_000_000,
   temperature: -50,
-  user_id: 1
+  user_id: 2
 )
 
 Planet.create(
@@ -43,5 +43,5 @@ Planet.create(
   price: 20_000,
   distance: 225_000_000,
   temperature: 40,
-  user_id: 1
+  user_id: 2
 )
