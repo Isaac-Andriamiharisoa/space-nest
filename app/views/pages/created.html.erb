@@ -1,4 +1,30 @@
+<div class="search-container row d-flex justify-content-between">
+  <div class="page-title col-5">
+    <h1>My Planets</h1>
+    <h6>The planets that you have rented</h6>
+  </div>
 
-<% @planets.each do |planet| %>
-  <li><%= planet.name %></li>
-<% end %>
+  <%# <div class="search-bar col-5"> %>
+    <%# <%= form_with(url: created_path, method: "get") do |f| %>
+      <%# <%= f.button type:"submit", class: "button-search" do%>
+        <%# <i class="fa fa-search"></i> %>
+      <%# <% end %>
+      <%# <%= f.text_field :search, placeholder: "Search", class: "search-field" %>
+    <%# <% end %>
+  <%# </div> %>
+</div>
+
+
+<div class="card-container">
+  <% @planets.each do |planet| %>
+    <div class="card">
+      <%= link_to planet_path(planet), class: "card-link" do %>
+      <%= image_tag "logo.png", alt: "text", class: "card-img" %>
+      <h3><%= planet.name %></h3>
+      <p><%= planet.details %></p>
+      <p><%= planet.price %>$ per night</p>
+      <%= link_to "Learn more", planet_path(planet), class: "button button-blue card-button"  %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
