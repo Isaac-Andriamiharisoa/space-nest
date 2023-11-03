@@ -9,12 +9,12 @@
 #   end
 
 User.create(
-   email: "test@email.com",
-   created_at: "2023-11-03",
-   updated_at: "2023-11-03",
-   first_name: "test",
-   last_name: "test",
-   password: "123456"
+  email: "test@email.com",
+  created_at: "2023-11-03",
+  updated_at: "2023-11-03",
+  first_name: "test",
+  last_name: "test",
+  password: "123456"
 )
 
 Planet.destroy_all

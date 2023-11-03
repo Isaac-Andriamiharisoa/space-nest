@@ -48,7 +48,7 @@
 
 .card-long {
   width: 100%;
-  padding: 140px 0px 100px 0;
+  padding: 100px 0px 100px 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -80,11 +80,16 @@
     align-items: center;
     text-align: center;
     justify-content: space-around;
+    // margin-bottom: 50px;
   }
 
   .icon-items{
     color: white;
-    font-size: 30px;
+    font-size: 40px;
+  }
+
+  .icon-items>p{
+    font-size: 15px;
   }
 }
 
