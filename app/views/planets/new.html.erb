@@ -5,10 +5,10 @@
 
 <div class="azoutplanet">
 
-  <div class="uploadpic">
+  <%# <div class="uploadpic">
     <img src="https://images.pexels.com/photos/6705878/pexels-photo-6705878.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="profile-picture" height="200" width="200" class="profimg">
     <%= button_to "Upload a picture" %>
-  </div>
+  <%# </div> %>
 
   <div class="addnewplanet">
 
@@ -22,9 +22,9 @@
       <%= f.input :photo, as: :file %>
     </div>
 
-    <div class="form-action">
-      <%= f.submit %>
-    </div>
+
+      <%= f.submit class: 'submit-btn' %>
+
 
     <% end %>
 
