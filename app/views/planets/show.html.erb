@@ -1,12 +1,12 @@
 <div data-controller="show-planet">
 
-    <div class="card-long" style="background-color: #0F0920">
+    <div class="card-long row" style="background-color: #0F0920">
 
-      <div class="card-long-img-container">
+      <div class="card-long-img-container col-3">
         <img src="https://cdn.pixabay.com/photo/2023/09/30/09/12/dachshund-8285220_1280.jpg" class="card-long-img">
       </div>
 
-      <div class="card-long-text-container">
+      <div class="card-long-text-container col-6">
 
           <h1 style="color: white; font-size: 60px"><%= @planet.name %></h1>
           <div class="icon-container">
@@ -63,30 +63,30 @@
     </div>
   </div>
 
-  <div class="container-fluid">
+  <div class="section-container col-12">
 
     <div style="margin: 50px 0 50px 100px">
       <h1 data-show-planet-target="bookingSection">Booking System</h1>
     </div>
 
-  <div class="row">
+    <div class="row col-12">
       <div class="col-7">
-      <div class="row">
-        <div class="col" style="padding-left: 150px">
-          <div id="fromdate">
-            <h4>FROM</h4>
+        <div class="row">
+          <div class="col" style="padding-left: 150px">
+            <div id="fromdate">
+              <h4>FROM</h4>
+            </div>
           </div>
-        </div>
-        <div class="col">
-          <div id="todate">
-            <h4>TO</h4>
+          <div class="col">
+            <div id="todate">
+              <h4>TO</h4>
+            </div>
           </div>
         </div>
       </div>
-      </div>
 
 
-        <div class="col-5">
+        <div class="col-4">
 
           <h5 style="margin-top: 45px">Date Pikr</h5>
 
@@ -95,23 +95,11 @@
             <input type="hidden" name="planets" class="end" value="<%= booking[:end_date] %>">
           <% end %>
 
-
-          <form action="<%= new_planet_booking_path(params[:id]) %>", method="GET">
-
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Start date</label>
-              <input class="form-control" name="fromDateold" id="fromDate" style="width: 200px" disabled>
-              <label for="exampleFormControlInput1" class="form-label" style="width: 200px; font-size: 12px;">End date</label>
-              <input class="form-control" name="toDate" id="toDate" style="width: 200px" disabled>
-
-              <div class="popup">
-
-              </div>
-
-              <button type="submit" class="btn btn-primary" style="width: 200px; height: 45px; border-radius: 32px;">Checkout</button>
-            </div>
-
-          </form>
+          <%= simple_form_for [@planet, @booking] do |f| %>
+            <%= f.input :start_date, as: :string %>
+            <%= f.input :end_date, as: :string %>
+            <%= f.submit %>
+          <% end %>
 
         </div>
       </div>
@@ -120,26 +108,37 @@
 </div>
 
 <script>
-flatpickr("#fromdate", {
+
+let disableRanges = [];
+const startDate = document.querySelectorAll('.start');
+const endDate = document.querySelectorAll('.end');
+
+for (let i = 0; i < startDate.length; i++) {
+  disableRanges.push({ from: startDate[i].value, to:endDate[i].value})
+}
+
+const fs = flatpickr("#fromdate", {
   inline: true,
+  minDate: "today",
   dateFormat: "Y-m-d",
-  disable: [{
-    from: "2023-11-02",
-    to: "2023-11-5"
-  }],
+  disable: disableRanges,
   onChange: value => {
     const selectedDate = value[0];
     const dateStr = selectedDate.getDate() + '/' + (selectedDate.getMonth() + 1) + '/' + selectedDate.getFullYear();
-    document.getElementById('fromDate').value = dateStr;
-  }
+    document.getElementById('booking_start_date').value = dateStr;
+    td.set('minDate', selectedDate)
+  },
 });
 
-flatpickr("#todate", {
+const td = flatpickr("#todate", {
   inline: true,
+  minDate: "today",
+  dateFormat: "Y-m-d",
+  disable: disableRanges,
   onChange: value => {
     const selectedDate = value[0];
     const dateEnd = selectedDate.getDate() + '/' + (selectedDate.getMonth() + 1) + '/' + selectedDate.getFullYear();
-    document.getElementById('toDate').value = dateEnd;
+    document.getElementById('booking_end_date').value = dateEnd;
   }
 });
 </script>

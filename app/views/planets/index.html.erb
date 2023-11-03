@@ -1,10 +1,10 @@
-<div class="search-container">
-  <div class="page-title">
+<div class="search-container row">
+  <div class="page-title col-5">
     <h1>Gallery</h1>
     <h6>Help us support lorem lorem Help us support</h6>
   </div>
 
-  <div class="search-bar">
+  <div class="search-bar col-5">
     <%= form_with(url: planets_path, method: "get") do |f| %>
       <%= f.button type:"submit", class: "button-search" do%>
         <i class="fa fa-search"></i>
@@ -27,8 +27,4 @@
       <% end %>
     </div>
   <% end %>
-</div>
-
-<div>
-<%= link_to "Add a planet", new_planet_path %>
 </div>

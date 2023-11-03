@@ -15,7 +15,8 @@ Planet.create(
   details: 'Wonder Woman comes into conflict with the Soviet Union during the Cold War in the 1980s',
   price: 20_000,
   distance: 0,
-  temperature: 23
+  temperature: 23,
+  user_id: 1
 )
 
 Planet.create(
@@ -23,7 +24,8 @@ Planet.create(
   details: 'The closest planet to the Sun, Mercury has extreme temperature variations and a very thin atmosphere.',
   price: 10_000,
   distance: 77_000_000,
-  temperature: 100
+  temperature: 100,
+  user_id: 1
 )
 
 Planet.create(
@@ -31,7 +33,8 @@ Planet.create(
   details: 'Venus is known for its thick, toxic atmosphere and extreme surface temperatures, making it the hottest planet in our solar system.',
   price: 15_000,
   distance: 261_000_000,
-  temperature: -50
+  temperature: -50,
+  user_id: 1
 )
 
 Planet.create(
@@ -39,5 +42,6 @@ Planet.create(
   details: 'Often called the "Red Planet," Mars is known for its iron-rich soil and potential for supporting future human exploration.',
   price: 20_000,
   distance: 225_000_000,
-  temperature: 40
+  temperature: 40,
+  user_id: 1
 )
