@@ -44,7 +44,7 @@ class PlanetsController < ApplicationController
   def destroy
     @planet = Planet.find(params[:id])
     @planet.destroy
-    redirect_to planets_path, status: :see_other
+    redirect_to created_path, status: :see_other
   end
 
   private
