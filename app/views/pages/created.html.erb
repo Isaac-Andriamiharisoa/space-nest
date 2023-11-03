@@ -2,6 +2,14 @@
 <% @planets.each do |planet| %>
   <li><%= planet.name %></li>
   <div class="col-3 text-end">
+
+    <% if planet.photo.attached? %>
+      <%= cl_image_tag planet.photo.key, alt: "A planet", class: "card-img"%>
+    <% else %>
+      <%= image_tag "logo.png", alt: "A planet", class: "card-img" %>
+    <% end %>
+
+    <%= link_to "See details", planet_path(planet) %>
         <%= link_to planet_path(planet), data: { turbo_method: :delete } do %>
           <div style="font-size: 40px; margin: 10px 10px"><i class="fa-solid fa-trash"></i></div>
         <% end %>

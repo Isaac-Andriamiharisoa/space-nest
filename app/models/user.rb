@@ -8,6 +8,6 @@ class User < ApplicationRecord
   has_one_attached :photo
 
   def upload_image_to_cloudinary
-    Cloudinary::Uploader.upload(photo.path, public_id: "user#{current_user.id}")
+    Cloudinary::Uploader.upload(photo.path, public_id: first_name)
   end
 end

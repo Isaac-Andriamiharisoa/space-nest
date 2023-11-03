@@ -3,7 +3,11 @@
     <div class="card-long row" style="background-color: #0F0920">
 
       <div class="card-long-img-container col-3">
-        <img src="https://cdn.pixabay.com/photo/2023/09/30/09/12/dachshund-8285220_1280.jpg" class="card-long-img">
+        <% if @planet.photo.attached? %>
+            <%= cl_image_tag @planet.photo.key, alt: "A planet", class: "card-img"%>
+          <% else %>
+            <%= image_tag "logo.png", alt: "A planet", class: "card-img" %>
+          <% end %>
       </div>
 
       <div class="card-long-text-container col-6">
