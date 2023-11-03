@@ -3,15 +3,6 @@
     <h1>My Planets</h1>
     <h6>The planets that you have rented</h6>
   </div>
-
-  <%# <div class="search-bar col-5"> %>
-    <%# <%= form_with(url: created_path, method: "get") do |f| %>
-      <%# <%= f.button type:"submit", class: "button-search" do%>
-        <%# <i class="fa fa-search"></i> %>
-      <%# <% end %>
-      <%# <%= f.text_field :search, placeholder: "Search", class: "search-field" %>
-    <%# <% end %>
-  <%# </div> %>
 </div>
 
 
@@ -24,6 +15,11 @@
       <p><%= planet.details %></p>
       <p><%= planet.price %>$ per night</p>
       <%= link_to "Learn more", planet_path(planet), class: "button button-blue card-button"  %>
+      <div class="col-3 text-end">
+        <%= link_to planet_path(planet), data: { turbo_method: :delete } do %>
+          <div style="font-size: 40px; margin: 10px 10px"><i class="fa-solid fa-trash"></i></div>
+        <% end %>
+      </div>
       <% end %>
     </div>
   <% end %>
