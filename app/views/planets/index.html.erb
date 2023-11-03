@@ -19,7 +19,11 @@
   <% @planets.each do |planet| %>
     <div class="card">
       <%= link_to planet_path(planet), class: "card-link" do %>
-        <%= image_tag "logo.png", alt: "text", class: "card-img" %>
+        <% if planet.photo.attached? %>
+          <%= cl_image_tag planet.photo.key, alt: "A planet", class: "card-img"%>
+        <% else %>
+          <%= image_tag "logo-color.png", alt: "A planet", class: "card-img" %>
+        <% end %>
         <h3><%= planet.name %></h3>
         <p><%= planet.details %></p>
         <p><%= planet.price %>$ per night</p>
