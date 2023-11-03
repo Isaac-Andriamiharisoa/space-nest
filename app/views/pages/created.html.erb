@@ -1,17 +1,29 @@
-
-<% @planets.each do |planet| %>
-  <li><%= planet.name %></li>
-  <div class="col-3 text-end">
-
-    <% if planet.photo.attached? %>
-      <%= cl_image_tag planet.photo.key, alt: "A planet", class: "card-img"%>
-    <% else %>
-      <%= image_tag "logo.png", alt: "A planet", class: "card-img" %>
-    <% end %>
-
-    <%= link_to "See details", planet_path(planet) %>
-        <%= link_to planet_path(planet), data: { turbo_method: :delete } do %>
-          <div style="font-size: 40px; margin: 10px 10px"><i class="fa-solid fa-trash"></i></div>
-        <% end %>
+<div class="search-container row d-flex justify-content-between">
+  <div class="page-title col-5">
+    <h1>My Planets</h1>
+    <h6>The planets that you have rented</h6>
   </div>
-<% end %>
+</div>
+
+<div class="card-container">
+  <% @planets.each do |planet| %>
+    <div class="card">
+      <%= link_to planet_path(planet), class: "card-link" do %>
+      <div style="font-size: 25px; margin-left: 80%; margin-top: 5%;">
+        <%= link_to planet_path(planet), data: { turbo_method: :delete } do %>
+          <i class="fa-solid fa-trash"></i>
+        <% end %>
+      </div>
+
+      <%= image_tag "logo.png", alt: "text", class: "card-img" %>
+      <h3><%= planet.name %></h3>
+      <p><%= planet.details %></p>
+      <p><%= planet.price %>$ per night</p>
+      <%= link_to "Learn more", planet_path(planet), class: "button button-blue card-button"  %>
+      <div class="col-3 text-end" style='z-index: 1000;'>
+
+      </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

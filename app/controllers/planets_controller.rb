@@ -20,7 +20,7 @@ class PlanetsController < ApplicationController
 
   def create
     @planet = Planet.new(planet_params)
-    @planet.user_id = current_user.id
+    @planet.user = current_user
     if @planet.save
       redirect_to created_path, notice: "A new planet is ready to be rented"
     else
@@ -50,6 +50,6 @@ class PlanetsController < ApplicationController
   private
 
   def planet_params
-    params.require(:planet).permit(%i[name details price distance photo])
+    params.require(:planet).permit(:name, :details, :price, :distance, :photo)
   end
 end

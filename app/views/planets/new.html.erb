@@ -7,8 +7,6 @@
 
   <div class="uploadpic">
     <%= image_tag "logo.png", alt: "text", width: "200", height: "200" %>
-    <%= button_to "Upload a picture" %>
-  </div>
 
   <div class="addnewplanet">
 
@@ -22,9 +20,9 @@
       <%= f.input :photo, as: :file %>
     </div>
 
-    <div class="form-action">
-      <%= f.submit %>
-    </div>
+
+      <%= f.submit class: 'submit-btn' %>
+
 
     <% end %>
 
