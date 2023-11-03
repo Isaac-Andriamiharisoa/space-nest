@@ -4,7 +4,7 @@
 
       <div class="card-long-img-container col-3">
         <% if @planet.photo.attached? %>
-            <%= cl_image_tag @planet.photo.key, alt: "A planet", class: "card-img"%>
+            <%= cl_image_tag @planet.photo.key, alt: "A planet", class: "card-img", style: "border-radius: 32px;"%>
           <% else %>
             <%= image_tag "logo.png", alt: "A planet", class: "card-img" %>
           <% end %>
@@ -67,7 +67,7 @@
     </div>
   </div>
 
-  <div class="section-container col-12">
+  <div class="section-container">
 
     <div style="margin: 50px 0 50px 100px">
       <h1 data-show-planet-target="bookingSection">Booking System</h1>
@@ -102,7 +102,7 @@
           <%= simple_form_for [@planet, @booking] do |f| %>
             <%= f.input :start_date, as: :string %>
             <%= f.input :end_date, as: :string %>
-            <%= f.submit %>
+            <%= f.submit%>
           <% end %>
 
         </div>

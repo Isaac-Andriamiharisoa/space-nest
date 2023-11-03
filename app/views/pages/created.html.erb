@@ -14,10 +14,12 @@
           <i class="fa-solid fa-trash"></i>
         <% end %>
       </div>
-
-      <%= image_tag "logo.png", alt: "text", class: "card-img" %>
-      <h3><%= planet.name %></h3>
-      <p><%= planet.details %></p>
+        <% if planet.photo.attached? %>
+          <%= cl_image_tag planet.photo.key, alt: "A planet", class: "card-img"%>
+        <% else %>
+          <%= image_tag "logo-color.png", alt: "A planet", class: "card-img" %>
+        <% end %>
+      <h3 style="color: #9795b5"><%= planet.name %></h3>
       <p><%= planet.price %>$ per night</p>
       <%= link_to "Learn more", planet_path(planet), class: "button button-blue card-button"  %>
       <div class="col-3 text-end" style='z-index: 1000;'>

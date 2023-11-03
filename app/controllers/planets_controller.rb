@@ -50,6 +50,6 @@ class PlanetsController < ApplicationController
   private
 
   def planet_params
-    params.require(:planet).permit(:name, :details, :price, :distance, :photo)
+    params.require(:planet).permit(:name, :details, :price, :distance, :temperature, :photo)
   end
 end

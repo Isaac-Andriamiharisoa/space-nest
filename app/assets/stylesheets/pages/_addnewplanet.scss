@@ -24,10 +24,9 @@
   border-radius: 40px;
   border: none;
   transition-duration: 0.4s;
-
 }
 .submit-btn:hover {
-  background-color: #0F0920;
+  background-color: #0f0920;
   color: #ffffff;
 }
 
@@ -43,26 +42,27 @@
 
   .addnewplanet {
     display: block;
-    // justify-content: center;
-    border: 5px solid black;
-    background-color: #f2f1fa;
-    border-radius: 32px;
-    margin-left: 35%;
-    padding: 25px;
+    justify-content: center;
+    background-color: #ffffff;
+    border-radius: 20px;
+    margin: 150px auto 50px auto;
+    padding: 40px 25px;
     width: 500px;
-    height: 700px;
+    height: 640px;
+    height: max-content;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.5);
 
-
+h1 {
+  color: #0F0920;
+}
     .form-inputs {
       display: inline;
-
     }
 
     .form-control {
       border-radius: 20px;
       height: 40px;
     }
-
 
     .form-action {
       input {
@@ -82,7 +82,7 @@
         transition-duration: 0.4s;
       }
       input:hover {
-        background-color: #0F0920;
+        background-color: #0f0920;
         color: #ffffff;
       }
     }
@@ -97,9 +97,8 @@
     }
 
     a:hover {
-      color: #0F0920;
+      color: #0f0920;
     }
-
   }
 }
 
