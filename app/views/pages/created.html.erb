@@ -1,4 +1,9 @@
 
 <% @planets.each do |planet| %>
   <li><%= planet.name %></li>
+  <div class="col-3 text-end">
+        <%= link_to planet_path(planet), data: { turbo_method: :delete } do %>
+          <div style="font-size: 40px; margin: 10px 10px"><i class="fa-solid fa-trash"></i></div>
+        <% end %>
+  </div>
 <% end %>
