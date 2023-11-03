@@ -1,8 +1,8 @@
 <div class="banner">
   <div class="text-item-container">
     <div class="text-container">
-      <h1 style="margin: -100px 0px 15px 30px; font-family: 'Press Start 2P';">Space Nest</h1>
-      <p style="margin-left: 45px;">
+      <h1 style="margin: -100px 0px 10px 30px; font-family: 'Press Start 2P';text-shadow: 4px 4px 7px rgba(0, 0, 0, 0.5);">Space Nest</h1>
+      <p style="margin-left: 60px; ">
         Lorem ipsum dolor sit amet consectetur
         <br>
         adipisicing elit.Aliquam accusantium
@@ -10,7 +10,7 @@
         quam impedit in.
       </p>
     </div>
-    <%= link_to "PLANETS", planets_path, class: "button-blue button-banner", style: "margin: 20px 0 0 40px; font-size: 18px; font-weight: bold;" %>
+    <%= link_to "Get a Planet", planets_path, class: "button-blue button-banner", style: "margin: 20px 0 0 40px" %>
   </div>
   <i class="fa-solid fa-angle-down" style="color: #ffffff;"></i>
 </div>
@@ -20,7 +20,7 @@
   <div class="card-long">
 
     <div class="card-long-text" style="padding-right: 25px">
-      <h1 style="margin-top: 30px"><%= @planets[0].name %></h1>
+      <h1 style="margin-top: 50px"><%= @planets[0].name %></h1>
       <p><%= @planets[0].details %></p>
       <p>Temperatue: <%= @planets[0].temperature %>℃</p>
     </div>
