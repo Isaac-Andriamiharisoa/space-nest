@@ -1,6 +1,11 @@
 class BookingsController < ApplicationController
   def index
     @bookings = Booking.where(user_id: current_user.id)
+    @prices = []
+    @bookings.each do |booking|
+      price = (booking.end_date - booking.start_date).to_i * booking.planet.price
+      @prices << price
+    end
   end
 
   def new
@@ -22,6 +27,9 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking = Booking.find[params[:id]]
+    @booking.destroy
+
+    redirect_to planet_path(planet)
   end
 
   private
