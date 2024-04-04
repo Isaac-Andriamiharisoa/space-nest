@@ -7,8 +7,11 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-
-User.create(
+puts "purgin database"
+User.destroy_all
+Planet.destroy_all
+puts "creating user"
+User.create!(
   email: "test@email.com",
   created_at: "2023-11-03",
   updated_at: "2023-11-03",
@@ -17,9 +20,9 @@ User.create(
   password: "123456"
 )
 
-Planet.destroy_all
 
-Planet.create(
+puts "creating planets"
+Planet.create!(
   name: 'Earth',
   details: 'Wonder Woman comes into conflict with the Soviet Union during the Cold War in the 1980s',
   price: 20_000,

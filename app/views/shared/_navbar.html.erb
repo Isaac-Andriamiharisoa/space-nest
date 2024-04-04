@@ -1,76 +1,12 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-      <ul class="link-container">
-
-        <%= link_to root_path, class: "logo" do %>
-          <%= image_tag "logo-nobg.png" %>
-        <% end %>
-
-        <% if user_signed_in? %>
-          <div class="item-container">
-            <li class="nav-item active">
-            <%= link_to "Home", root_path, class: "nav-link" %>
-            </li>
-            <li class="nav-item active">
-            <%= link_to "Gallery", planets_path, class: "nav-link" %>
-            </li>
-            <li class="nav-item active">
-              <%= link_to "My Booking", bookings_path, class: "nav-link" %>
-            </li>
-            <li class="nav-item active">
-            <%= link_to "Why Us?", root_path+"#footer", class: "nav-link" %>
-            </li>
-          </div>
-
-          <div class="profile-container">
-            <li class="nav-item dropdown">
-              <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <% if current_user.photo.attached? %>
-                  <%= cl_image_tag current_user.photo.key, alt: "An avatar", class: "avatar"%>
-                <% else %>
-                  <%= image_tag "logo.png", alt: "A current_user", class: "avatar" %>
-                <% end %>
-              </a>
-              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <%= link_to "Edit profile", edit_user_registration_path , class: "dropdown-item" %>
-                <%= link_to "My planets", created_path, class: "dropdown-item" %>
-                <%= link_to "Add a planet", new_planet_path, class: "dropdown-item" %>
-                <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-              </div>
-            </li>
-          </div>
-
-
-          <% else %>
-
-              <div class="item-container">
-                <li class="nav-item active">
-                <%= link_to "Home", root_path, class: "nav-link" %>
-                </li>
-                <li class="nav-item active">
-                <%= link_to "Gallery", planets_path, class: "nav-link" %>
-                </li>
-                <li class="nav-item active">
-                  <%= link_to "Why us?", '#', class: "nav-link" %>
-                </li>
-              </div>
-
-              <div class="profile-container">
-                <li class="nav-item">
-                  <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-                </li>
-              </div>
-
-
-          <% end %>
-      </ul>
-    </div>
+<nav class="nav nav__glass">
+  <div class="nav__logo-container">
+    <%= link_to root_path, class: "nav__logo" do %>
+      <%= image_tag "logo-nobg.png" %>
+    <% end %>
   </div>
-</div>
+  <% if user_signed_in? %>
+    <%= render 'shared/navbar/connected_navbar' %>
+  <% else %>
+    <%= render 'shared/navbar/disconnected_navbar' %>
+  <% end %>
+</nav>
