@@ -1,26 +1,24 @@
 .nav {
   padding: 0 15px;
-  margin: 0 25px;
+  height: 75px;
+  width: 95%;
   position: fixed;
   top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: 25px;
   place-items: center;
   z-index: 1;
 
-  &__glass {
-    background: linear-gradient(150deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: 35px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-  }
-
   &__logo-container,
   &__profile-container {
     grid-column: span 1;
+    height: 100%;
+    width: 75px;
+    display: flex;
+    align-items: center;
   }
 
   &__link-container {
@@ -43,7 +41,7 @@
 
   &__logo {
     img {
-      width: 100px;
+      width: 100%;
     }
   }
 }

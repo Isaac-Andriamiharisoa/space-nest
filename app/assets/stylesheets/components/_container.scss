@@ -1,0 +1,39 @@
+@import 'color';
+
+.design {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 50px auto;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 100px;
+
+  &__title {
+    grid-column: span 4;
+  }
+
+  &__content {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+
+    .btn {
+      background-color: #2a2a2a;
+      color: #fff;
+      text-align: center;
+      height: 50px;
+      width: 125px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      &--8bit {
+        background-color: $cadetblue-light;
+        border-radius: 0;
+        border: 5px $cadetblue-dark solid;
+        box-shadow: inset $cadetblue -5px -5px;
+      }
+    }
+  }
+}

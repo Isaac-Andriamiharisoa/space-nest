@@ -5,8 +5,47 @@
   height: 600px;
 }
 
+.banner {
+  width: 100%;
+  height: 100vh;
+  background-position: right;
+  background-size: cover;
+  background-image: url('bg-home.png');
+  color: #DADADA;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  &__text {
+    font-size: 3rem;
+    font-family: 'Press Start 2P';
+    text-shadow: 4px 4px 7px rgba(0, 0, 0, 0.5);
+  }
+
+  &__text-container {
+    margin-left: auto;
+    width: 40vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    p {
+      font-size: 16px;
+    }
+  }
+
+  .fa-angle-down {
+    position: absolute;
+    font-size: 60px;
+    bottom: 0;
+    left: 50%;
+  }
+
+}
+
 .card_title {
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-style: normal;
   font-weight: 1000;
   font-size: 48px;
@@ -19,54 +58,19 @@
   font-size: small;
   color: #F2F0FF;
 }
-.image_container{
-position: absolute;
-width: 450px;
-height: 450px;
-// left: 200px;
-top: 80px;
-background: url(image.png), #9B9B9B;
-border-radius: 30px;
+
+.image_container {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  // left: 200px;
+  top: 80px;
+  background: url(image.png), #9B9B9B;
+  border-radius: 30px;
 }
 
 .description_container {
   display: flex;
   color: #F2F0FF;
   padding-right: 25px;
-}
-
-.banner{
-  width: 100%;
-  height: 100vh;
-  padding-top: 100px;
-  background-position: right;
-  background-size: cover;
-  background-image: url('bg-home.png');
-  color: #DADADA;
-  display: flex;
-  align-items: center;
-  position: relative;
-
-  .fa-angle-down {
-    position: absolute;
-    font-size: 60px;
-    bottom: 0;
-    left: 50%;
-  }
-
-  .text-item-container {
-    margin-left: auto;
-    width: 40vw;
-    height: 30vh;
-    display: flex;
-    flex-direction: column;
-
-    h1 {
-      font-size: 70px;
-    }
-
-    p{
-      font-size: 16px;
-    }
-  }
 }

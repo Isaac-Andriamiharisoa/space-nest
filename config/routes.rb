@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   resources :bookings, only: %i[index destroy], on: :collection
   get "created", to: "pages#created"
+  get "design", to: "design#index"
 
   resources :planets do
     resources :bookings, only: %i[new create]
