@@ -14,7 +14,7 @@ User.create(
   updated_at: "2023-11-03",
   first_name: "test",
   last_name: "test",
-  password: "123456"
+  password: "1234567890"
 )
 
 Planet.destroy_all

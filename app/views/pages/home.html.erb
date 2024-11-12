@@ -20,12 +20,16 @@
   <div class="card-long">
 
     <div class="card-long-text" style="padding-right: 25px; width: 50%;">
-      <h1 style="margin-top: 50px"><%= @planets[0].name %></h1>
-      <p><%= @planets[0].details %></p>
-      <p>Temperatue: <%= @planets[0].temperature %>°F</p>
+      <% if @planets[0] %>
+        <h1 style="margin-top: 50px"><%= @planets[0].name %></h1>
+        <p><%= @planets[0].details %></p>
+        <p>Temperature: <%= @planets[0].temperature %>°F</p>
+      <% else %>
+        <p>No planet data available.</p>
+      <% end %>
     </div>
     <%= image_tag 'logo.png', alt: "text", class: "section-img" %>
-  </div> 
+  </div>
   <i class="fa-solid fa-angle-right" style="color: #ffffff;"></i>
 </div>
 
