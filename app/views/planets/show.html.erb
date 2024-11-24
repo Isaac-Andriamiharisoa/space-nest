@@ -3,11 +3,11 @@
     <div class="card-long row" style="background-color: #0F0920">
 
       <div class="card-long-img-container col-3">
-        <% if @planet.photo.attached? %>
-            <%= cl_image_tag @planet.photo.key, alt: "A planet", class: "card-img", style: "border-radius: 32px;"%>
-          <% else %>
+        <%# <% if @planet.photo.attached? %>
+            <%# <%= cl_image_tag @planet.photo.key, alt: "A planet", class: "card-img", style: "border-radius: 32px;"%> %>
+          <%# <% else %>
             <%= image_tag "logo.png", alt: "A planet", class: "card-img" %>
-          <% end %>
+          <%# <% end %>
       </div>
 
       <div class="card-long-text-container col-6">
